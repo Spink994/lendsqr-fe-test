@@ -1,0 +1,20 @@
+@import "../variables/colors";
+@import "../variables/fonts";
+
+@mixin input_base_style($height, $max_width, $font) {
+  height: $height;
+  max-width: $max_width;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid $violet_2;
+
+  //   Placeholder styles
+  &::placeholder {
+    color: $violet_2;
+    font: $font;
+  }
+}
+
+.input_variant_1 {
+  @include input_base_style(50px, 447px, $avenir_400);
+}

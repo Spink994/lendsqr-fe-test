@@ -1,0 +1,69 @@
+.btn_variant_1 {
+  height: 48px;
+  border: none;
+  background-color: #39cdcc;
+  font-family: "Avenir-semibold";
+  font-size: 14px;
+  border-radius: 8px;
+  color: #ffffff;
+  max-width: 447px;
+  width: 100%;
+}
+
+.btn_variant_2 {
+  height: 40px;
+  border: none;
+  background-color: #39cdcc;
+  font-family: "Work Sans";
+  font-size: 14px;
+  border-radius: 8px;
+  color: #ffffff;
+  width: 98px;
+}
+
+.btn_variant_3 {
+  height: 40px;
+  border: 1px solid #545f7d;
+  background-color: #39cdcc;
+  font-family: "Work Sans";
+  font-size: 14px;
+  border-radius: 8px;
+  color: #ffffff;
+  width: 98px;
+  background-color: transparent;
+  color: #545f7d;
+  font-weight: 600;
+}
+
+.input_variant_1 {
+  height: 50px;
+  max-width: 447px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid rgba(84, 95, 125, 0.1490196078);
+}
+.input_variant_1::-moz-placeholder {
+  color: rgba(84, 95, 125, 0.1490196078);
+  font: "Avenir-regular";
+}
+.input_variant_1:-ms-input-placeholder {
+  color: rgba(84, 95, 125, 0.1490196078);
+  font: "Avenir-regular";
+}
+.input_variant_1::placeholder {
+  color: rgba(84, 95, 125, 0.1490196078);
+  font: "Avenir-regular";
+}
+
+@font-face {
+  font-family: "Avenir-bold";
+  src: url("../assets/fonts/Metropolis-ExtraBold.otf");
+}
+@font-face {
+  font-family: "Avenir-semibold";
+  src: url("../assets/fonts/Metropolis-SemiBold.otf");
+}
+@font-face {
+  font-family: "Avenir-regular";
+  src: url("../assets/fonts/Metropolis-Regular.otf");
+}/*# sourceMappingURL=index.css.map */

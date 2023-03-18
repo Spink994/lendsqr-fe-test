@@ -1,0 +1,19 @@
+@import "./variables/fonts";
+@import "./variables/colors";
+@import "./mixins/base_button";
+@import "./mixins/base_input";
+
+@font-face {
+  font-family: $avenir_700;
+  src: url("../assets/fonts/Metropolis-ExtraBold.otf");
+}
+
+@font-face {
+  font-family: $avenir_600;
+  src: url("../assets/fonts/Metropolis-SemiBold.otf");
+}
+
+@font-face {
+  font-family: $avenir_400;
+  src: url("../assets/fonts/Metropolis-Regular.otf");
+}

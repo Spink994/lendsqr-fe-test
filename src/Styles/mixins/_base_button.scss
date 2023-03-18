@@ -1,0 +1,33 @@
+@import "../variables/colors";
+@import "../variables/fonts";
+
+$background_color: $teal;
+
+@mixin button_base_style($height, $font, $border) {
+  height: $height;
+  border: $border;
+  background-color: $background_color;
+  font-family: $font;
+  font-size: 14px;
+  border-radius: 8px;
+  color: $white;
+}
+
+.btn_variant_1 {
+  @include button_base_style(48px, $avenir_600, none);
+  max-width: 447px;
+  width: 100%;
+}
+
+.btn_variant_2 {
+  @include button_base_style(40px, $work_sans, none);
+  width: 98px;
+}
+
+.btn_variant_3 {
+  @include button_base_style(40px, $work_sans, 1px solid $violet_1);
+  width: 98px;
+  background-color: transparent;
+  color: $violet_1;
+  font-weight: 600;
+}
