@@ -1,7 +1,10 @@
 @import "../variables/colors";
 @import "../variables/fonts";
 
-$background_color: $teal;
+$background_color: map-get(
+  $map: $colors,
+  $key: teal_1,
+);
 
 @mixin button_base_style($height, $font, $border) {
   height: $height;
@@ -10,13 +13,20 @@ $background_color: $teal;
   font-family: $font;
   font-size: 14px;
   border-radius: 8px;
-  color: $white;
+  cursor: pointer;
+  color: map-get($map: $colors, $key: white);
+  transition: all 200ms ease-in-out;
 }
 
 .btn_variant_1 {
   @include button_base_style(48px, $avenir_600, none);
   max-width: 447px;
   width: 100%;
+  letter-spacing: 0.1em;
+
+  &:hover {
+    background-color: #34b9b9;
+  }
 }
 
 .btn_variant_2 {
@@ -25,9 +35,13 @@ $background_color: $teal;
 }
 
 .btn_variant_3 {
-  @include button_base_style(40px, $work_sans, 1px solid $violet_1);
+  @include button_base_style(
+    40px,
+    $work_sans,
+    1px solid map-get($map: $colors, $key: violet_1)
+  );
   width: 98px;
   background-color: transparent;
-  color: $violet_1;
+  color: map-get($map: $colors, $key: violet_1);
   font-weight: 600;
 }

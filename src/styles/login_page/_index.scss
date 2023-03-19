@@ -1,0 +1,121 @@
+@import "../mixins/display";
+@import "../variables/fonts";
+@import "../variables/colors";
+
+.login_wrapper {
+  overflow-x: hidden;
+  width: 100%;
+  padding: 0 100px;
+  padding-top: 106px;
+  @include display_flex-column();
+
+  .logo {
+    width: 174px;
+    height: 36px;
+    margin-bottom: 139px;
+  }
+
+  .login_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.left_login-section {
+  @include display_flex-column();
+  overflow-x: hidden;
+  transform: translateY(34px);
+
+  .login_image {
+    transform: translateX(-40px);
+  }
+}
+
+.right_login-section {
+  @include display_flex-column();
+  max-width: 704px;
+  width: 100%;
+  padding-left: 100px;
+
+  h1 {
+    font-family: $avenir_700;
+    color: map-get($map: $colors, $key: dark_blue);
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-family: $avenir_400;
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+
+  .link {
+    color: map-get($map: $colors, $key: teal_1);
+    font-family: $avenir_600;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  button {
+    margin-top: 6px;
+  }
+}
+
+.form_container {
+  @include display_flex-column();
+  position: relative;
+  max-width: 447px;
+  gap: 24px;
+  width: 100%;
+
+  .reveal_password {
+    position: absolute;
+    right: 18px;
+    bottom: 133px;
+    font-family: $avenir_600;
+    letter-spacing: 0.1em;
+    color: map-get($map: $colors, $key: teal_1);
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 996px) {
+  .login_wrapper {
+    padding: 0 32px;
+    padding-bottom: 100px;
+    padding-top: 40px;
+
+    .logo {
+      margin-bottom: 40px;
+    }
+  }
+
+  .login_container {
+    @include display_flex-column();
+    margin-inline: auto;
+  }
+
+  .left_login-section {
+    width: 100%;
+    margin-bottom: 50px;
+    .login_image {
+      transform: translateX(0);
+      width: 100%;
+    }
+  }
+
+  .right_login-section {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 0px;
+
+    .form_container {
+      max-width: 100%;
+      button {
+        max-width: 100%;
+      }
+    }
+  }
+}

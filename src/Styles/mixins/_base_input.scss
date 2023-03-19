@@ -6,15 +6,18 @@
   max-width: $max_width;
   width: 100%;
   border-radius: 5px;
-  border: 2px solid $violet_2;
+  border: 2px solid map-get($map: $colors, $key: violet_2);
+  padding-left: 16px;
+  outline: map-get($map: $colors, $key: teal_1);
 
   //   Placeholder styles
   &::placeholder {
-    color: $violet_2;
+    color: map-get($map: $colors, $key: violet_1);
     font: $font;
+    opacity: 0.6;
   }
 }
 
 .input_variant_1 {
-  @include input_base_style(50px, 447px, $avenir_400);
+  @include input_base_style(50px, 100%, $avenir_400);
 }
