@@ -5,9 +5,15 @@
   font-family: "Avenir-semibold";
   font-size: 14px;
   border-radius: 8px;
+  cursor: pointer;
   color: #ffffff;
+  transition: all 200ms ease-in-out;
   max-width: 447px;
   width: 100%;
+  letter-spacing: 0.1em;
+}
+.btn_variant_1:hover {
+  background-color: #34b9b9;
 }
 
 .btn_variant_2 {
@@ -17,7 +23,9 @@
   font-family: "Work Sans";
   font-size: 14px;
   border-radius: 8px;
+  cursor: pointer;
   color: #ffffff;
+  transition: all 200ms ease-in-out;
   width: 98px;
 }
 
@@ -28,7 +36,9 @@
   font-family: "Work Sans";
   font-size: 14px;
   border-radius: 8px;
+  cursor: pointer;
   color: #ffffff;
+  transition: all 200ms ease-in-out;
   width: 98px;
   background-color: transparent;
   color: #545f7d;
@@ -37,22 +47,241 @@
 
 .input_variant_1 {
   height: 50px;
-  max-width: 447px;
+  max-width: 100%;
   width: 100%;
   border-radius: 5px;
   border: 2px solid rgba(84, 95, 125, 0.1490196078);
+  padding-left: 16px;
+  outline: #39cdcc;
 }
 .input_variant_1::-moz-placeholder {
-  color: rgba(84, 95, 125, 0.1490196078);
+  color: #545f7d;
   font: "Avenir-regular";
+  opacity: 0.6;
 }
 .input_variant_1:-ms-input-placeholder {
-  color: rgba(84, 95, 125, 0.1490196078);
+  color: #545f7d;
   font: "Avenir-regular";
+  opacity: 0.6;
 }
 .input_variant_1::placeholder {
-  color: rgba(84, 95, 125, 0.1490196078);
+  color: #545f7d;
   font: "Avenir-regular";
+  opacity: 0.6;
+}
+
+.login_wrapper {
+  overflow-x: hidden;
+  width: 100%;
+  padding: 0 100px;
+  padding-top: 106px;
+  display: flex;
+  flex-direction: column;
+}
+.login_wrapper .logo {
+  width: 174px;
+  height: 36px;
+  margin-bottom: 139px;
+}
+.login_wrapper .login_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.left_login-section {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  transform: translateY(34px);
+}
+.left_login-section .login_image {
+  transform: translateX(-40px);
+}
+
+.right_login-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 704px;
+  width: 100%;
+  padding-left: 100px;
+}
+.right_login-section h1 {
+  font-family: "Avenir-bold";
+  color: #213f7d;
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+.right_login-section p {
+  font-family: "Avenir-regular";
+  font-size: 20px;
+  margin-bottom: 60px;
+}
+.right_login-section .link {
+  color: #39cdcc;
+  font-family: "Avenir-semibold";
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+.right_login-section button {
+  margin-top: 6px;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 447px;
+  gap: 24px;
+  width: 100%;
+}
+.form_container .reveal_password {
+  position: absolute;
+  right: 18px;
+  bottom: 133px;
+  font-family: "Avenir-semibold";
+  letter-spacing: 0.1em;
+  color: #39cdcc;
+  font-size: 12px;
+}
+
+@media (max-width: 996px) {
+  .login_wrapper {
+    padding: 0 32px;
+    padding-bottom: 100px;
+    padding-top: 40px;
+  }
+  .login_wrapper .logo {
+    margin-bottom: 40px;
+  }
+  .login_container {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+  }
+  .left_login-section {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .left_login-section .login_image {
+    transform: translateX(0);
+    width: 100%;
+  }
+  .right_login-section {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 0px;
+  }
+  .right_login-section .form_container {
+    max-width: 100%;
+  }
+  .right_login-section .form_container button {
+    max-width: 100%;
+  }
+}
+.loading_ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.loading_ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.loading_ellipsis div:nth-child(1) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis1 0.6s infinite;
+          animation: lds-ellipsis1 0.6s infinite;
+}
+.loading_ellipsis div:nth-child(2) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+.loading_ellipsis div:nth-child(3) {
+  left: 32px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+.loading_ellipsis div:nth-child(4) {
+  left: 56px;
+  -webkit-animation: lds-ellipsis3 0.6s infinite;
+          animation: lds-ellipsis3 0.6s infinite;
+}
+
+@-webkit-keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin-inline: auto;
+  color: #545f7d;
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
 }
 
 @font-face {

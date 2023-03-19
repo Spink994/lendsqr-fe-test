@@ -2,6 +2,27 @@
 @import "./variables/colors";
 @import "./mixins/base_button";
 @import "./mixins/base_input";
+@import "./login_page/";
+@import "./loading_spinner/";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin-inline: auto;
+  color: map-get($map: $colors, $key: violet_1);
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+}
 
 @font-face {
   font-family: $avenir_700;
