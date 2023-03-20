@@ -3,7 +3,7 @@ import { Layout } from "../../components";
 export default function Dashboard() {
   return (
     <Layout>
-      <div>Dashboard</div>
+      <div className="dashboard_main-view">Dashboard</div>
     </Layout>
   );
 }

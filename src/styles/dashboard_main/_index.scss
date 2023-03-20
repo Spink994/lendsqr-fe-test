@@ -1,0 +1,6 @@
+@import "../variables/colors";
+
+.dashboard_main-view {
+  background-color: map-get($map: $colors, $key: off_white);
+  height: calc(100vh - 100px);
+}

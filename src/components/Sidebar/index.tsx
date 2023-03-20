@@ -1,13 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import Logo from "../../assets/svg/lendsqr_logo.svg";
 import Caret from "../../assets/icons/caret_outline.svg";
 
 import sidebarData from "./sidebarData";
-import { useState } from "react";
 import routes from "../../routes/routes.const";
-
-interface Props {}
+import { Burger } from "../../components";
+import { useAppContext } from "../../context/AppContext";
 
 interface LinkProps {
   label: string;
@@ -32,24 +32,17 @@ function Links({ label, icon, route, option, onClick }: LinkProps) {
   );
 }
 
-export default function Sidebar({}: Props) {
+export default function Sidebar() {
+  const context = useAppContext();
   const navigate = useNavigate();
-  const [hideSideBar, setHideSideBar] = useState<boolean>(false);
 
   return (
-    <aside className={`${hideSideBar && "hide"}`}>
+    <aside className={`${context?.hideSideBar && "hide"}`}>
       {/* The logo and the closing burger icon */}
       <div className="logo_and_burger_container">
         <img className="dashboard_logo" src={Logo} alt="lendsqr_logo" />
         {/* The toggle burger icons*/}
-        <button
-          onClick={() => setHideSideBar(!hideSideBar)}
-          className="burger_icon"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+        <Burger />
       </div>
 
       {/* The sidebar icons */}
