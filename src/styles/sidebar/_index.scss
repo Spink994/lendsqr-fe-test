@@ -1,0 +1,131 @@
+@import "../mixins/display";
+@import "../mixins/burger_icon";
+@import "../mixins/sidebar_header";
+@import "../variables/fonts";
+@import "../variables/colors";
+
+aside {
+  @include display_flex-column();
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 2px;
+    background-color: map-get($map: $colors, $key: violet_2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get($map: $colors, $key: teal_1);
+  }
+
+  padding-top: 35px;
+  padding-bottom: 80px;
+
+  position: absolute;
+  min-width: 283px;
+  max-width: 283px;
+  height: 100vh;
+  overflow-y: scroll;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+
+  background-color: #fff;
+
+  z-index: 500;
+
+  .dashboard_logo {
+    width: 50%;
+  }
+
+  .logo_and_burger_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 74px;
+    padding-inline: 30px;
+  }
+
+  .burger_icon {
+    @include display_flex-column();
+    @include burger_icon(0px);
+
+    span:nth-child(1) {
+      transform: rotate(40deg);
+      transform-origin: right bottom center;
+    }
+    span:nth-child(2) {
+      display: none;
+    }
+    span:nth-child(3) {
+      transform: translateY(-3px) rotate(-40deg);
+      transform-origin: right top center;
+    }
+  }
+
+  .sidebar_link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: $work_sans;
+    font-weight: 400;
+    color: map-get($map: $colors, $key: dark_blue);
+    font-size: 16px;
+    height: 40px;
+    width: 100%;
+
+    padding-inline: 30px;
+    margin-top: 8px;
+
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+      border-left: 3px solid rgb(57, 205, 205);
+      background-color: rgba(57, 205, 205, 0.06);
+    }
+  }
+
+  .customers {
+    h1 {
+      @include sidebar_header();
+    }
+  }
+
+  .businesses {
+    h1 {
+      @include sidebar_header();
+    }
+  }
+
+  .version {
+    font-size: 14px;
+    font-family: $work_sans;
+
+    padding-inline: 30px;
+    margin-top: 40px;
+  }
+
+  transition: all 300ms ease-in-out;
+}
+
+.hide {
+  transform: translateX(-100%) !important;
+}
+
+.active_link {
+  border-left: 3px solid rgb(57, 205, 205);
+  background-color: rgba(57, 205, 205, 0.06);
+}
+
+@media (min-width: 996px) {
+  aside {
+    position: relative;
+
+    .dashboard_logo {
+      width: 145px;
+      height: 30px;
+    }
+
+    .burger_icon {
+      display: none;
+    }
+  }
+}
