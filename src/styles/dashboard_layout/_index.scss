@@ -1,8 +1,14 @@
 .dashboard_layout {
   display: grid;
   grid-template-columns: 1fr;
-  max-height: 100vh;
-  overflow: hidden;
+  max-width: 1880px;
+  width: 100%;
+  margin-inline: auto;
+
+  section {
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
 }
 
 @media (min-width: 996px) {

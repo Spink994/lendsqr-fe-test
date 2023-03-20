@@ -20,6 +20,10 @@
 
 .input_variant_1 {
   @include input_base_style(50px, 100%, $avenir_400);
+}
+
+.input_variant_2 {
+  @include input_base_style(50px, 100%, $avenir_400);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: none;

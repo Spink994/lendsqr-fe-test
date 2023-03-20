@@ -20,6 +20,8 @@ aside {
   padding-top: 35px;
   padding-bottom: 80px;
 
+  transform: translateX(-100%);
+
   position: absolute;
   min-width: 283px;
   max-width: 283px;
@@ -52,7 +54,7 @@ aside {
     font-weight: 400;
     color: map-get($map: $colors, $key: dark_blue);
     font-size: 16px;
-    height: 40px;
+    height: 44px;
     width: 100%;
 
     padding-inline: 30px;
@@ -89,8 +91,8 @@ aside {
   transition: all 300ms ease-in-out;
 }
 
-.hide {
-  transform: translateX(-100%) !important;
+.show {
+  transform: translateX(0%);
 }
 
 .active_link {
@@ -101,6 +103,7 @@ aside {
 @media (min-width: 996px) {
   aside {
     position: relative;
+    transform: translateX(0);
 
     .dashboard_logo {
       width: 145px;

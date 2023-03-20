@@ -15,10 +15,10 @@ export default function DashboardHeader() {
 
   return (
     <section className="dashboard_header">
-      <img className="dashboard_logo" src={Logo} alt="lendsqr_logo" />
+      <img className="dashboard_header-logo" src={Logo} alt="lendsqr_logo" />
       <form>
         <input
-          className="input_variant_1"
+          className="input_variant_2"
           name={formData.search.name}
           placeholder={formData.search.placeholder}
           required={formData.search.required}
@@ -41,7 +41,7 @@ export default function DashboardHeader() {
           <img src={Caret_Down_Fill} alt="caret" />
         </div>
       </div>
-      {context?.hideSideBar && <Burger />}
+      {!context?.hideSideBar && <Burger />}
     </section>
   );
 }

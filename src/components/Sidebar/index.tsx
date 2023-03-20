@@ -37,7 +37,7 @@ export default function Sidebar() {
   const navigate = useNavigate();
 
   return (
-    <aside className={`${context?.hideSideBar && "hide"}`}>
+    <aside className={`${context?.hideSideBar && "show"}`}>
       {/* The logo and the closing burger icon */}
       <div className="logo_and_burger_container">
         <img className="dashboard_logo" src={Logo} alt="lendsqr_logo" />
@@ -53,6 +53,7 @@ export default function Sidebar() {
           label={sidebarData.switch[0].label}
           option={sidebarData.switch[0].option}
           route="/organisation"
+          onClick={() => context?.setHideSideBar(!context.hideSideBar)}
         />
       </div>
 
@@ -62,6 +63,7 @@ export default function Sidebar() {
           icon={sidebarData.dashboard[0].icon}
           label={sidebarData.dashboard[0].label}
           route={sidebarData.dashboard[0].route}
+          onClick={() => context?.setHideSideBar(!context.hideSideBar)}
         />
       </div>
 
@@ -75,6 +77,7 @@ export default function Sidebar() {
             icon={link.icon}
             label={link.label}
             route={link.route}
+            onClick={() => context?.setHideSideBar(!context.hideSideBar)}
           />
         ))}
       </div>
@@ -89,6 +92,7 @@ export default function Sidebar() {
             icon={link.icon}
             label={link.label}
             route={link.route}
+            onClick={() => context?.setHideSideBar(!context.hideSideBar)}
           />
         ))}
       </div>
@@ -103,6 +107,7 @@ export default function Sidebar() {
             icon={link.icon}
             label={link.label}
             route={link.route}
+            onClick={() => context?.setHideSideBar(!context.hideSideBar)}
           />
         ))}
       </div>
