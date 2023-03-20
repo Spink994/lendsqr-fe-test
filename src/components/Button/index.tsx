@@ -9,7 +9,7 @@ interface Props {
   type?: "submit" | "button";
 }
 
-export function Button({
+export default function Button({
   classes,
   onClick,
   disabled,

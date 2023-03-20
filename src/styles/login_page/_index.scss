@@ -3,6 +3,8 @@
 @import "../variables/colors";
 
 .login_wrapper {
+  max-width: 1440px;
+  margin-inline: auto;
   overflow-x: hidden;
   width: 100%;
   padding: 0 100px;
