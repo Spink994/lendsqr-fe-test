@@ -1,0 +1,95 @@
+.dashboard_header {
+  height: 60px;
+  border-bottom: 0.5px solid rgb(33, 2, 59, 0.09);
+  background-color: map-get($map: $colors, $key: white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 32px;
+
+  .burger_icon {
+    gap: 3px;
+    span:nth-child(1) {
+      transform: rotate(0deg);
+      transform-origin: right bottom center;
+    }
+    span:nth-child(2) {
+      display: block;
+      width: 70%;
+    }
+    span:nth-child(3) {
+      transform: rotate(0deg);
+    }
+  }
+
+  .dashboard_logo {
+    width: 30%;
+  }
+
+  form {
+    display: none;
+  }
+
+  .dashboard_header-right {
+    display: none;
+  }
+}
+
+@media (min-width: 996px) {
+  .dashboard_header {
+    border-bottom: none;
+    height: 100px;
+
+    padding-inline: 60px;
+
+    .dashboard_logo {
+      display: none;
+    }
+
+    form {
+      display: flex;
+      max-width: 400px;
+      width: 100%;
+      position: relative;
+
+      button {
+        cursor: pointer;
+        min-width: 66px;
+        border: none;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        background-color: map-get($map: $colors, $key: teal_1);
+      }
+    }
+
+    .dashboard_header-right {
+      display: flex;
+      gap: 35px;
+      align-items: center;
+
+      .docs {
+        color: map-get($map: $colors, $key: dark_blue);
+        font-family: $work_sans;
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: underline;
+      }
+
+      .profile_avatar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          font-family: $work_sans;
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        [alt="caret"] {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

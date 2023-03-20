@@ -1,0 +1,22 @@
+.burger_icon {
+  @include display_flex-column();
+  @include burger_icon(0px);
+
+  span:nth-child(1) {
+    transform: rotate(40deg);
+    transform-origin: right bottom center;
+  }
+  span:nth-child(2) {
+    display: none;
+  }
+  span:nth-child(3) {
+    transform: translateY(-3px) rotate(-40deg);
+    transform-origin: right top center;
+  }
+}
+
+@media (min-width: 996px) {
+  .burger_icon {
+    display: none;
+  }
+}

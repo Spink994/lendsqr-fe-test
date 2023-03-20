@@ -1,5 +1,5 @@
-import { Sidebar } from "../../components";
-import React from "react";
+import { Sidebar, DashboardHeader } from "../../components";
+import React, { useState } from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ export default function Layout({ children }: Props) {
       <Sidebar />
 
       <section>
-        <div>Top Navigation</div>
+        <DashboardHeader />
         <div>{children}</div>
       </section>
     </main>
