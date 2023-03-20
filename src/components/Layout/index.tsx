@@ -12,7 +12,7 @@ export default function Layout({ children }: Props) {
 
       <section>
         <DashboardHeader />
-        <div>{children}</div>
+        <div className="children">{children}</div>
       </section>
     </main>
   );
