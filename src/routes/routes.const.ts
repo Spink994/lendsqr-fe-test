@@ -12,7 +12,7 @@ const routes = {
   savings_products: "/dashboard/savings_products",
   fees_and_charges: "/dashboard/fees_and_charges",
   transactions: "/dashboard/transactions",
-  services: "/dashboard/users",
+  services: "/dashboard/services",
   settlements: "/dashboard/settlements",
   reports: "/dashboard/reports",
   preferences: "/dashboard/preferences",
@@ -23,6 +23,7 @@ const routes = {
   loans: "/dashboard/loans",
   loan_products: "/dashboard/loan_products",
   service_account: "/dashboard/service_account",
+  user_details: "/dashboard/user_details/:userId",
 };
 
 export default routes;

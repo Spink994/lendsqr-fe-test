@@ -22,6 +22,13 @@ import Systems_Messages from "../../assets/icons/system_messages.svg";
 import Logout from "../../assets/icons/logout.svg";
 import Loan from "../../assets/icons/loans.svg";
 
+export interface SidebarType {
+  label: string;
+  icon: string;
+  option?: boolean;
+  route: string;
+}
+
 export default {
   switch: [
     {
