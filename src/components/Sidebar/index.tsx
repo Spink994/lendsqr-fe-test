@@ -4,16 +4,12 @@ import { useState } from "react";
 import Logo from "../../assets/svg/lendsqr_logo.svg";
 import Caret from "../../assets/icons/caret_outline.svg";
 
-import sidebarData from "./sidebarData";
+import sidebarData, { SidebarType } from "./sidebarData";
 import routes from "../../routes/routes.const";
 import { Burger } from "../../components";
 import { useAppContext } from "../../context/AppContext";
 
-interface LinkProps {
-  label: string;
-  icon: string;
-  route: string;
-  option?: boolean;
+interface LinkProps extends SidebarType {
   onClick?: () => void;
 }
 
