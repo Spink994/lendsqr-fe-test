@@ -8,7 +8,7 @@ import Users_With_Savings from "../../assets/svg/users_with_savings.svg";
 export interface IUserProps {
   icon: string;
   label: string;
-  figure: number;
+  figure: number | undefined;
 }
 
 export default {

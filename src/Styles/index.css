@@ -98,6 +98,78 @@
   opacity: 0.6;
 }
 
+.input_variant_3 {
+  height: 40px;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid rgba(84, 95, 125, 0.1490196078);
+  padding-left: 16px;
+  outline: #39cdcc;
+  outline: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 16px;
+}
+.input_variant_3::-moz-placeholder {
+  color: #545f7d;
+  font: "Avenir-regular";
+  opacity: 0.6;
+}
+.input_variant_3:-ms-input-placeholder {
+  color: #545f7d;
+  font: "Avenir-regular";
+  opacity: 0.6;
+}
+.input_variant_3::placeholder {
+  color: #545f7d;
+  font: "Avenir-regular";
+  opacity: 0.6;
+}
+.input_variant_3 select {
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 100%;
+  width: 100%;
+  color: rgba(84, 95, 12, 0.7);
+}
+.input_variant_3 [alt=caret_down] {
+  position: absolute;
+  right: 16px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.input_variant_4 {
+  height: 40px;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid rgba(84, 95, 125, 0.1490196078);
+  padding-left: 16px;
+  outline: #39cdcc;
+}
+.input_variant_4::-moz-placeholder {
+  color: #545f7d;
+  font: "Avenir-regular";
+  opacity: 0.6;
+}
+.input_variant_4:-ms-input-placeholder {
+  color: #545f7d;
+  font: "Avenir-regular";
+  opacity: 0.6;
+}
+.input_variant_4::placeholder {
+  color: #545f7d;
+  font: "Avenir-regular";
+  opacity: 0.6;
+}
+
 .login_wrapper {
   max-width: 1440px;
   margin-inline: auto;
@@ -466,9 +538,10 @@
   overflow-y: visible;
   background-color: #ffffff;
   padding-inline: 30px;
-  min-height: 700px;
+  min-height: 640px;
   max-height: 700px;
   padding-bottom: 0px;
+  position: relative;
 }
 .dashboard_main-view .users_information_container::-webkit-scrollbar {
   width: 3px;
@@ -476,6 +549,66 @@
 }
 .dashboard_main-view .users_information_container::-webkit-scrollbar-thumb {
   width: 3px;
+}
+.dashboard_main-view .users_information_container .filter_modal_container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.04);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+}
+.dashboard_main-view .users_information_container .filter_modal {
+  position: absolute;
+  width: 270px;
+  min-height: 600px;
+  background-color: #fff;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  border-radius: 4px;
+  padding-inline: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.dashboard_main-view .users_information_container .filter_modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.dashboard_main-view .users_information_container .filter_modal form input,
+.dashboard_main-view .users_information_container .filter_modal form .input_variant_3 {
+  margin-top: 6px;
+}
+.dashboard_main-view .users_information_container .filter_modal form input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  margin-right: 16px;
+  cursor: pointer;
+}
+.dashboard_main-view .users_information_container .filter_modal form .date_label {
+  position: relative;
+}
+.dashboard_main-view .users_information_container .filter_modal form .date_label img {
+  position: absolute;
+  top: 55%;
+  right: 16px;
+  pointer-events: none;
+}
+.dashboard_main-view .users_information_container .filter_modal form .form_button_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.dashboard_main-view .users_information_container .filter_modal label span {
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 14px;
 }
 .dashboard_main-view .users_information_container .users_table {
   border-collapse: collapse;
@@ -491,6 +624,9 @@
   min-width: 150px;
   text-align: left;
 }
+.dashboard_main-view .users_information_container .users_table thead > tr > th img {
+  cursor: pointer;
+}
 .dashboard_main-view .users_information_container .users_table tr > td {
   padding-right: 16px;
 }
@@ -503,7 +639,9 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-width: 120px;
   position: relative;
+  word-wrap: break-word;
 }
 .dashboard_main-view .users_information_container .users_table td div {
   display: flex;

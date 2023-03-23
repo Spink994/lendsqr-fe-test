@@ -15,11 +15,12 @@ interface LinkProps extends SidebarType {
 
 function Links({ label, icon, route, option, onClick }: LinkProps) {
   const [isActive] = useState<string>(window.location.pathname);
+  console.log(isActive);
 
   return (
     <Link
       onClick={onClick}
-      className={`sidebar_link ${isActive === route && "active_link"}`}
+      className={`sidebar_link ${isActive.includes(route) && "active_link"}`}
       to={route}
     >
       <img src={icon} alt={label} />
