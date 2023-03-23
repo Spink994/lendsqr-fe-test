@@ -1,0 +1,331 @@
+.user_details_main {
+  @include display_flex-column();
+  padding: 32px;
+  padding-top: 80px;
+  height: 100vh;
+  overflow-y: scroll;
+
+  background-color: map-get($map: $colors, $key: off_white);
+
+  .back_to_users {
+    font-family: $work_sans;
+    font-size: 14px;
+    font-weight: 500px;
+    color: map-get($map: $colors, $key: violet_1);
+    margin-bottom: 32px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    img {
+      width: 26px;
+    }
+  }
+
+  .user_details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      height: 40px;
+      width: 170px;
+      border-radius: 8px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: $work_sans;
+      font-weight: 500;
+
+      &:active {
+        transform: scale(1.03);
+      }
+
+      transition: all 300ms ease-in-out;
+    }
+
+    button:nth-child(1) {
+      border: 1px solid #e4033b;
+      color: #e4033b;
+
+      &:hover {
+        background-color: #e4033b34;
+      }
+    }
+    button:nth-child(2) {
+      border: 1px solid #39cdcc;
+      color: #39cdcc;
+
+      &:hover {
+        background-color: #39cdcd2f;
+      }
+    }
+  }
+
+  h1 {
+    font-family: $work_sans;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .partail_user_box {
+    position: relative;
+    min-height: max-content;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 40px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+
+    padding: 30px;
+    padding-bottom: 0px;
+
+    @include display_flex-column();
+    justify-content: space-between;
+    gap: 24px;
+
+    .users_details {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      .avatar_and_username {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-right: 30px;
+        border-right: 1px solid rgb(84, 95, 125, 0.2);
+        gap: 20px;
+
+        div {
+          @include display_flex-column();
+          gap: 8px;
+
+          span:nth-child(1) {
+            font-size: 22px;
+            font-family: $work_sans;
+            font-weight: 500;
+            color: map-get($map: $colors, $key: dark_blue);
+          }
+
+          span:nth-child(2) {
+            font-family: $work_sans;
+            color: map-get($map: $colors, $key: violet_1);
+            font-weight: 400;
+            font-size: 14px;
+          }
+        }
+
+        [alt="profile_avatar"] {
+          height: 100px;
+          width: 100px;
+          border-radius: 50%;
+        }
+      }
+
+      .tiers {
+        font-family: $work_sans;
+        color: map-get($map: $colors, $key: violet_1);
+        font-weight: 500;
+        font-size: 14px;
+
+        min-height: 100px;
+
+        @include display_flex-column();
+        align-items: flex-start;
+        justify-content: center;
+        gap: 8px;
+
+        padding-right: 30px;
+        border-right: 1px solid rgb(84, 95, 125, 0.2);
+      }
+
+      .bank_details {
+        @include display_flex-column();
+        gap: 8px;
+
+        span:nth-child(1) {
+          font-size: 22px;
+          font-family: $work_sans;
+          font-weight: 500;
+          color: map-get($map: $colors, $key: dark_blue);
+        }
+
+        span:nth-child(2) {
+          font-family: $work_sans;
+          color: map-get($map: $colors, $key: violet_1);
+          font-weight: 400;
+          font-size: 14px;
+        }
+      }
+    }
+
+    button {
+      font-family: $work_sans;
+      font-size: 16px;
+      border-bottom: 2px solid #39cdcc;
+      font-weight: 500;
+      color: #000000cc;
+      padding: 12px;
+
+      width: max-content;
+    }
+
+    .navigation_panel {
+      position: absolute;
+
+      transform: translateY(-20%);
+      opacity: 0;
+      pointer-events: none;
+
+      transition: all 300ms ease-in-out;
+
+      top: 110%;
+      left: 0;
+      background-color: #fff;
+      flex-direction: column;
+      padding: 30px;
+
+      font-family: $work_sans;
+      font-weight: 400;
+      font-size: 16px;
+      min-height: 30px;
+      width: 100%;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+
+      a {
+        color: #000000cc;
+        padding: 10px;
+
+        width: max-content;
+      }
+
+      .border_active {
+        border-bottom: 2px solid #39cdcc;
+      }
+    }
+  }
+
+  .other_information_details {
+    display: flex;
+    overflow-x: clip;
+    height: max-content;
+  }
+
+  .general_details_information {
+    min-width: 100%;
+    background-color: #fff;
+    margin-top: 30px;
+
+    font-family: $work_sans;
+
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    padding: 30px;
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+
+      div {
+        border-bottom: none;
+        font-family: $work_sans;
+        min-width: 100px;
+        max-width: 250px;
+
+        @include display_flex-column();
+        gap: 8px;
+
+        span:nth-child(1) {
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 400;
+        }
+
+        span:nth-child(2) {
+          text-transform: capitalize;
+        }
+      }
+
+      width: 100%;
+      padding-bottom: 10px;
+
+      border-bottom: 1px solid rgb(33, 63, 125, 0.1);
+
+      .personal_information_header,
+      .education,
+      .socials,
+      .guarantor {
+        min-width: 100%;
+      }
+      h1 {
+        font-family: $work_sans;
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+}
+
+.show_panel {
+  transform: translateY(0%) !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+  z-index: 40;
+}
+
+@media (min-width: 996px) {
+  .user_details_main {
+    padding: 60px;
+    height: calc(100vh - 100px);
+
+    button {
+      display: none;
+    }
+
+    .partail_user_box {
+      .navigation_panel {
+        position: relative;
+        top: 0;
+
+        padding-bottom: 0px;
+
+        background-color: transparent;
+        flex-direction: row;
+
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+}

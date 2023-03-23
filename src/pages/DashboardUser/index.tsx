@@ -1,8 +1,16 @@
-import { Layout } from "../../components";
+import { useEffect } from "react";
+import { Layout, Spinner } from "../../components";
 import OverallUserStats from "./OverallUserStats";
 import Table from "./Table";
+import { useAppContext } from "../../context/AppContext";
 
 export default function User() {
+  const context = useAppContext();
+
+  useEffect(() => {
+    context?.setUserData(context.userDataBeforeMutation);
+  }, []);
+
   return (
     <Layout>
       <section className="dashboard_main-view">

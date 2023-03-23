@@ -1,12 +1,20 @@
 import { Button } from "../../components";
 import Logo from "../../assets/svg/lendsqr_logo.svg";
 import LoginSideImage from "../../assets/svg/login_side-image.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import fields from "./formData";
 import { useState } from "react";
+import routes from "../../routes/routes.const";
 
 export default function Login() {
   const [isHidden, setIsHidden] = useState<boolean>(false);
+
+  const navigate = useNavigate();
+
+  function handleLogin(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    navigate(routes.users);
+  }
 
   return (
     <div className="login_wrapper">
@@ -24,10 +32,10 @@ export default function Login() {
           <p>Enter details to login.</p>
 
           <div>
-            <form className="form_container">
+            <form onSubmit={handleLogin} className="form_container">
               <input
                 className="input_variant_1"
-                required={fields.email.required}
+                // required={fields.email.required}
                 type={fields.email.type}
                 name={fields.email.name}
                 placeholder={fields.email.placeholder}
@@ -36,7 +44,7 @@ export default function Login() {
               />
               <input
                 className="input_variant_1"
-                required={fields.password.required}
+                // required={fields.password.required}
                 type={!isHidden ? fields.password.type : "text"}
                 name={fields.password.name}
                 placeholder={fields.password.placeholder}

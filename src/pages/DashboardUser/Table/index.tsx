@@ -3,10 +3,7 @@ import FilterModal from "../FilterModal";
 import Theader from "../TableHeader";
 
 import Caret_Outline from "../../../assets/icons/caret_outline.svg";
-import {
-  IModifiedUserDataProps,
-  useAppContext,
-} from "../../../context/AppContext";
+import { useAppContext } from "../../../context/AppContext";
 import { generatePaginationItems } from "../../../utils/helperFunctions";
 import TableRow from "../TableRow";
 
@@ -18,13 +15,12 @@ export default function Table({}: Props) {
   const [activePage, setActivePage] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
   const [showFilterModal, setShowFilterModal] = useState<boolean>(false);
-  const [filteredData, setFilteredData] = useState<IModifiedUserDataProps[]>(
-    []
-  );
 
   const paginationButtonContainer = useRef<HTMLDivElement | null>(null);
   const dataToSlice =
-    filteredData.length === 0 ? context?.userData : filteredData;
+    context?.filteredData.length === 0
+      ? context?.userData
+      : context?.filteredData;
 
   const count = context?.userData.length;
   const totalPages = count && count / rowsPerPage;
@@ -40,7 +36,7 @@ export default function Table({}: Props) {
     totalPages,
     setActivePage,
     activePage,
-    filteredData.length
+    context?.filteredData.length as number
   );
 
   return (
@@ -49,10 +45,7 @@ export default function Table({}: Props) {
       <div className="users_information_container">
         {/* The filter modal component */}
         {showFilterModal && (
-          <FilterModal
-            setFilteredData={setFilteredData}
-            setShowFilterModal={setShowFilterModal}
-          />
+          <FilterModal setShowFilterModal={setShowFilterModal} />
         )}
 
         <table className="users_table">
@@ -82,8 +75,6 @@ export default function Table({}: Props) {
                 index={index}
                 rowsPerPage={rowsPerPage}
                 id={data.id}
-                filteredData={filteredData}
-                setFilteredData={setFilteredData}
               />
             ))}
           </tbody>

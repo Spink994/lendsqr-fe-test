@@ -24,6 +24,7 @@ const routes = {
   loan_products: "/loan_products",
   service_account: "/service_account",
   user_details: "/users/:userId",
+  other_pages: "/*",
 };
 
 export default routes;

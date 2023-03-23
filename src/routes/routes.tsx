@@ -8,6 +8,7 @@ const Login = lazy(() => import("../pages/Login"));
 const DashboardUser = lazy(() => import("../pages/DashboardUser"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
 const UserDetails = lazy(() => import("../pages/UserDetails"));
+const PageNotFound = lazy(() => import("../pages/PageNotFound"));
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path={routes.dashboard} element={<Dashboard />} />
           <Route path={routes.users} element={<DashboardUser />} />
           <Route path={routes.user_details} element={<UserDetails />} />
+          <Route path={routes.other_pages} element={<PageNotFound />} />
         </Routes>
       </Suspense>
     </Router>
