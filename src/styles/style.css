@@ -1082,15 +1082,16 @@ button {
   font-weight: 500;
   font-size: 16px;
 }
-.user_details_main .general_details_information .hide {
-  display: none !important;
-}
 
 .show_panel {
   transform: translateY(0%) !important;
   opacity: 1 !important;
   pointer-events: all !important;
   z-index: 40;
+}
+
+.hide-current_view {
+  display: none !important;
 }
 
 @media (min-width: 996px) {
