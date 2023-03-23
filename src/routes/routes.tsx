@@ -10,6 +10,8 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const UserDetails = lazy(() => import("../pages/UserDetails"));
 const PageNotFound = lazy(() => import("../pages/PageNotFound"));
 
+import "../styles/style.css";
+
 function App() {
   return (
     <Router>
