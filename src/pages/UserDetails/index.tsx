@@ -1,7 +1,11 @@
-import React from "react";
+import { Layout } from "../../components";
 
 type Props = {};
 
 export default function UserDetails({}: Props) {
-  return <div>UserDetails</div>;
+  return (
+    <Layout>
+      <div>UserDetails</div>
+    </Layout>
+  );
 }

@@ -6,14 +6,26 @@ interface IProps {
   children: React.ReactNode;
 }
 
+export interface IFormDataProps {
+  username: string;
+  email: string;
+  organisation: string;
+  status: string;
+  phone: string;
+  date: string;
+}
+
 type AppContextType = {
   hideSideBar: boolean;
   setHideSideBar: React.Dispatch<React.SetStateAction<boolean>>;
   rerender: boolean;
   setRerender: React.Dispatch<React.SetStateAction<boolean>>;
-  userData: IUserDataProps[];
+  userData: IModifiedUserDataProps[];
+  setUserData: React.Dispatch<React.SetStateAction<IModifiedUserDataProps[]>>;
   total_number_of_pages: number;
   isLoading: boolean;
+  setFormData: React.Dispatch<React.SetStateAction<IFormDataProps>>;
+  formData: IFormDataProps;
 };
 
 export enum LocalStorage {
@@ -21,13 +33,18 @@ export enum LocalStorage {
 }
 
 export enum StatusType {
-  ACTIVE = "active",
-  INACTIVE = "inactive",
+  ACTIVE = "on",
+  INACTIVE = "off",
   PENDING = "pending",
   BLACKLISTED = "blacklisted",
 }
 
-interface IModifiedUserDataProps extends IUserDataProps {
+export enum StatusTypeModified {
+  ACTIVE = "on",
+  INACTIVE = "off",
+}
+
+export interface IModifiedUserDataProps extends IUserDataProps {
   status: StatusType;
 }
 
@@ -38,6 +55,14 @@ export default function SidebarProvider({ children }: IProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [userData, setUserData] = useState<IModifiedUserDataProps[]>([]);
   const [rerender, setRerender] = useState<boolean>(false);
+  const [formData, setFormData] = useState<IFormDataProps>({
+    username: "",
+    email: "",
+    organisation: "",
+    status: "",
+    phone: "",
+    date: "",
+  });
 
   useEffect(() => {
     const check_local_storage_for_modified_data = localStorage.getItem(
@@ -54,7 +79,7 @@ export default function SidebarProvider({ children }: IProps) {
           // modifying the user data to add the status
           const modified_data = res.map((data) => ({
             ...data,
-            status: StatusType.INACTIVE,
+            status: StatusTypeModified.INACTIVE,
           }));
 
           // Storing the modified data to the localstorage
@@ -91,6 +116,9 @@ export default function SidebarProvider({ children }: IProps) {
     isLoading,
     setRerender,
     rerender,
+    formData,
+    setUserData,
+    setFormData,
   };
 
   return (

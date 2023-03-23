@@ -13,14 +13,12 @@ function App() {
   return (
     <Router>
       <Suspense fallback={<Fallback />}>
-        <Layout>
-          <Routes>
-            <Route path={routes.home} element={<Login />} />
-            <Route path={routes.dashboard} element={<Dashboard />} />
-            <Route path={routes.users} element={<DashboardUser />} />
-            <Route path={routes.user_details} element={<UserDetails />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route path={routes.home} element={<Login />} />
+          <Route path={routes.dashboard} element={<Dashboard />} />
+          <Route path={routes.users} element={<DashboardUser />} />
+          <Route path={routes.user_details} element={<UserDetails />} />
+        </Routes>
       </Suspense>
     </Router>
   );

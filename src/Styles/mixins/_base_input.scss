@@ -28,3 +28,36 @@
   border-bottom-right-radius: 0;
   border-right: none;
 }
+
+.input_variant_3 {
+  @include input_base_style(40px, 100%, $avenir_400);
+  outline: none;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-right: 16px;
+
+  select {
+    border: none;
+    outline: none;
+    appearance: none;
+    height: 100%;
+    width: 100%;
+    color: rgb(84, 95, 12, 0.7);
+  }
+
+  [alt="caret_down"] {
+    position: absolute;
+    right: 16px;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+}
+
+.input_variant_4 {
+  @include input_base_style(40px, 100%, $avenir_400);
+}

@@ -5,15 +5,25 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: Props) {
-  return (
-    <main className="dashboard_layout">
-      <Sidebar />
+const non_dashboard_pages = ["/"];
 
-      <section>
-        <DashboardHeader />
-        <div className="children">{children}</div>
-      </section>
-    </main>
+export default function Layout({ children }: Props) {
+  const { pathname } = window.location;
+
+  return (
+    <>
+      {non_dashboard_pages.includes(pathname) ? (
+        <main>{children}</main>
+      ) : (
+        <main className="dashboard_layout">
+          <Sidebar />
+
+          <section>
+            <DashboardHeader />
+            <div className="children">{children}</div>
+          </section>
+        </main>
+      )}
+    </>
   );
 }
