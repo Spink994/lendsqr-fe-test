@@ -8,7 +8,7 @@ import ErrorBoundary from "./utils/ErrorBoundary";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <SidebarProvider>
-      <ErrorBoundary fallback={<div>Error Loading Page</div>}>
+      <ErrorBoundary>
         <App />
       </ErrorBoundary>
     </SidebarProvider>
