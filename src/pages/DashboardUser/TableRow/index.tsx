@@ -14,10 +14,6 @@ interface ITableRow {
   index: number;
   rowsPerPage: number;
   id: string;
-  filteredData: IModifiedUserDataProps[];
-  setFilteredData: React.Dispatch<
-    React.SetStateAction<IModifiedUserDataProps[]>
-  >;
 }
 
 export default function TableRow({
@@ -30,7 +26,6 @@ export default function TableRow({
   index,
   rowsPerPage,
   id,
-  setFilteredData,
 }: ITableRow) {
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
@@ -71,11 +66,7 @@ export default function TableRow({
         <div>
           <span className={`${newStatus}`}>{newStatus}</span>
           {showOptions && (
-            <OptionsModal
-              setFilteredData={setFilteredData}
-              id={id}
-              handleShowOptions={handleShowOptions}
-            />
+            <OptionsModal id={id} handleShowOptions={handleShowOptions} />
           )}
 
           <button onClick={handleShowOptions} className="options_button">

@@ -1,7 +1,6 @@
 import React from "react";
 import {
   IFormDataProps,
-  IModifiedUserDataProps,
   LocalStorage,
   StatusType,
   StatusTypeModified,
@@ -14,16 +13,10 @@ import { Button } from "../../../components";
 
 type FilterModal = {
   setShowFilterModal: React.Dispatch<React.SetStateAction<boolean>>;
-  setFilteredData: React.Dispatch<
-    React.SetStateAction<IModifiedUserDataProps[]>
-  >;
 };
 
 // The filter options modal
-export default function FilterModal({
-  setShowFilterModal,
-  setFilteredData,
-}: FilterModal) {
+export default function FilterModal({ setShowFilterModal }: FilterModal) {
   const context = useAppContext();
 
   function handleInputChange(
@@ -70,12 +63,7 @@ export default function FilterModal({
       date: "",
     });
 
-    setFilteredData([]);
-
-    context?.setUserData(
-      JSON.parse(localStorage.getItem(LocalStorage.USER_DATA) || "")
-    );
-
+    context?.setUserData(context.userDataBeforeMutation);
     context?.setRerender(!context.rerender);
   }
 
@@ -104,7 +92,7 @@ export default function FilterModal({
           filterOptionsToString.includes(user.orgName)
       );
 
-      setFilteredData(userDataAfterMutation);
+      context?.setUserData(userDataAfterMutation);
     }
   }
 

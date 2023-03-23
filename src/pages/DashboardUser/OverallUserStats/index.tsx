@@ -5,12 +5,18 @@ import {
   LocalStorage,
   useAppContext,
 } from "../../../context/AppContext";
+import { useEffect, useState } from "react";
 
 type Props = {};
 
 export default function OverallUserStats({}: Props) {
   const context = useAppContext();
-  const count = JSON.parse(localStorage.getItem(LocalStorage.USER_DATA) || "");
+  const [count, setCount] = useState<IModifiedUserDataProps[] | null>(null);
+
+  useEffect(() => {
+    const checkLocalStorage = localStorage?.getItem(LocalStorage.USER_DATA);
+    if (checkLocalStorage) setCount(JSON.parse(checkLocalStorage));
+  }, [context?.userData]);
 
   return (
     // The users Overall statistics - Total Users, Active Users ...
@@ -20,7 +26,7 @@ export default function OverallUserStats({}: Props) {
         key={userBoxData.totalUser.label}
         icon={userBoxData.totalUser.icon}
         label={userBoxData.totalUser.label}
-        figure={count.length}
+        figure={count?.length as number}
       />
       <UserBox
         key={userBoxData.activeUsers.label}
@@ -33,7 +39,7 @@ export default function OverallUserStats({}: Props) {
         icon={userBoxData.usersWithLoans.icon}
         label={userBoxData.usersWithLoans.label}
         figure={
-          count.filter(
+          count?.filter(
             (data: IModifiedUserDataProps) =>
               Number(data.education?.loanRepayment) > 0
           ).length
@@ -44,7 +50,7 @@ export default function OverallUserStats({}: Props) {
         icon={userBoxData.usersWithSavings.icon}
         label={userBoxData.usersWithSavings.label}
         figure={
-          count.filter(
+          count?.filter(
             (data: IModifiedUserDataProps) =>
               Number(data.accountBalance) -
                 Number(data.education?.loanRepayment) >

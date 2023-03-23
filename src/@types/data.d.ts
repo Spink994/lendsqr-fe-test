@@ -4,6 +4,8 @@ type UserGuarantorType = {
   phoneNumber: string;
   gender: string;
   address: string;
+  email: string;
+  relationship: string;
 };
 
 type UserProfileType = {
@@ -15,6 +17,11 @@ type UserProfileType = {
   bvn: string;
   address: string;
   currency: string;
+  maritalStatus: string;
+  bankName: string;
+  accountNumber: string;
+  children: string;
+  typeOfResidence: string;
 };
 
 type SocialsType = {
@@ -29,7 +36,7 @@ type EducationType = {
   sector: string;
   duration: string;
   officeEmail: string;
-  monthlyIncome: string;
+  monthlyIncome: strings[];
   loanRepayment: string;
 };
 

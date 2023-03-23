@@ -3,7 +3,6 @@ import Activate_User from "../../../assets/icons/activate_user.svg";
 import View_Details from "../../../assets/icons/view_details.svg";
 
 import {
-  IModifiedUserDataProps,
   LocalStorage,
   StatusType,
   StatusTypeModified,
@@ -14,17 +13,10 @@ import { useNavigate } from "react-router-dom";
 type OptionsModal = {
   handleShowOptions: () => void;
   id: string;
-  setFilteredData: React.Dispatch<
-    React.SetStateAction<IModifiedUserDataProps[]>
-  >;
 };
 
 // Options Modal Component
-export default function OptionsModal({
-  handleShowOptions,
-  id,
-  setFilteredData,
-}: OptionsModal) {
+export default function OptionsModal({ handleShowOptions, id }: OptionsModal) {
   const context = useAppContext();
   const navigate = useNavigate();
 
@@ -36,15 +28,6 @@ export default function OptionsModal({
         return { ...item, status: statusType };
       }
       return item;
-    });
-
-    setFilteredData((prevData: any) => {
-      return prevData.map((item: any) => {
-        if (item.id === id) {
-          return { ...item, status: statusType };
-        }
-        return item;
-      });
     });
 
     // Modifies the current data in the local storage to the modified data
@@ -73,15 +56,21 @@ export default function OptionsModal({
       <span onClick={handleShowOptions} className="close">
         X
       </span>
-      <button onClick={() => navigate(`/users/${id}`)}>
+      <button onClick={() => navigate(`/users/${id}#general_details`)}>
         <img src={View_Details} alt="view_details" />
         <span>View Details</span>{" "}
       </button>
-      <button onClick={() => handleBlacklistUser(id)}>
+      <button
+        disabled={(context?.userData.length as number) < 100}
+        onClick={() => handleBlacklistUser(id)}
+      >
         <img src={Blacklist_User} alt="blacklist_user" />
         <span>Blacklist User</span>
       </button>
-      <button onClick={() => handleActivateUser(id)}>
+      <button
+        disabled={(context?.userData.length as number) < 100}
+        onClick={() => handleActivateUser(id)}
+      >
         <img src={Activate_User} alt="activate_user" />
         <span>Activate User</span>
       </button>

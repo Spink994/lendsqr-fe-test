@@ -26,6 +26,11 @@ type AppContextType = {
   isLoading: boolean;
   setFormData: React.Dispatch<React.SetStateAction<IFormDataProps>>;
   formData: IFormDataProps;
+  setFilteredData: React.Dispatch<
+    React.SetStateAction<IModifiedUserDataProps[]>
+  >;
+  filteredData: IModifiedUserDataProps[];
+  userDataBeforeMutation: IModifiedUserDataProps[];
 };
 
 export enum LocalStorage {
@@ -54,6 +59,13 @@ export default function SidebarProvider({ children }: IProps) {
   const [hideSideBar, setHideSideBar] = useState(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [userData, setUserData] = useState<IModifiedUserDataProps[]>([]);
+  const [filteredData, setFilteredData] = useState<IModifiedUserDataProps[]>(
+    []
+  );
+  const [userDataBeforeMutation, setUserDataBeforeMutation] = useState<
+    IModifiedUserDataProps[]
+  >([]);
+
   const [rerender, setRerender] = useState<boolean>(false);
   const [formData, setFormData] = useState<IFormDataProps>({
     username: "",
@@ -69,8 +81,14 @@ export default function SidebarProvider({ children }: IProps) {
       LocalStorage.USER_DATA
     );
 
-    if (check_local_storage_for_modified_data) {
+    if (
+      check_local_storage_for_modified_data &&
+      JSON.parse(check_local_storage_for_modified_data).length > 99
+    ) {
       setUserData(JSON.parse(check_local_storage_for_modified_data));
+      setUserDataBeforeMutation(
+        JSON.parse(check_local_storage_for_modified_data)
+      );
       return;
     } else {
       setIsLoading(true);
@@ -80,6 +98,19 @@ export default function SidebarProvider({ children }: IProps) {
           const modified_data = res.map((data) => ({
             ...data,
             status: StatusTypeModified.INACTIVE,
+            profile: {
+              ...data.profile,
+              maritalStatus: "single",
+              bankName: "Guarantee Trust Bank",
+              accountNumber: "0216337830",
+              children: "none",
+              typeOfResidence: "Parent's Apartment",
+            },
+            guarantor: {
+              ...data.guarantor,
+              email: "slowpacerapper@gmail.com",
+              relationship: "cousin",
+            },
           }));
 
           // Storing the modified data to the localstorage
@@ -94,9 +125,13 @@ export default function SidebarProvider({ children }: IProps) {
             LocalStorage.USER_DATA
           );
 
-          if (check_local_storage_for_modified_data)
+          if (check_local_storage_for_modified_data) {
             setUserData(JSON.parse(check_local_storage_for_modified_data));
-          setIsLoading(false);
+            setUserDataBeforeMutation(
+              JSON.parse(check_local_storage_for_modified_data)
+            );
+            setIsLoading(false);
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -119,6 +154,9 @@ export default function SidebarProvider({ children }: IProps) {
     formData,
     setUserData,
     setFormData,
+    filteredData,
+    setFilteredData,
+    userDataBeforeMutation,
   };
 
   return (

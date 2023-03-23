@@ -831,6 +831,287 @@ button {
   cursor: pointer;
 }
 
+.user_details_main {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  padding-top: 80px;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(245, 245, 245, 0.831372549);
+}
+.user_details_main .back_to_users {
+  font-family: "Work Sans";
+  font-size: 14px;
+  font-weight: 500px;
+  color: #545f7d;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.user_details_main .back_to_users img {
+  width: 26px;
+}
+.user_details_main .user_details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.user_details_main .user_details-header div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.user_details_main .user_details-header button {
+  height: 40px;
+  width: 170px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Work Sans";
+  font-weight: 500;
+  transition: all 300ms ease-in-out;
+}
+.user_details_main .user_details-header button:active {
+  transform: scale(1.03);
+}
+.user_details_main .user_details-header button:nth-child(1) {
+  border: 1px solid #e4033b;
+  color: #e4033b;
+}
+.user_details_main .user_details-header button:nth-child(1):hover {
+  background-color: rgba(228, 3, 59, 0.2039215686);
+}
+.user_details_main .user_details-header button:nth-child(2) {
+  border: 1px solid #39cdcc;
+  color: #39cdcc;
+}
+.user_details_main .user_details-header button:nth-child(2):hover {
+  background-color: rgba(57, 205, 205, 0.1843137255);
+}
+.user_details_main h1 {
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 24px;
+}
+.user_details_main .partail_user_box {
+  position: relative;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 40px;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 30px;
+  padding-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+.user_details_main .partail_user_box .users_details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.user_details_main .partail_user_box .users_details .avatar_and_username {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-right: 30px;
+  border-right: 1px solid rgba(84, 95, 125, 0.2);
+  gap: 20px;
+}
+.user_details_main .partail_user_box .users_details .avatar_and_username div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.user_details_main .partail_user_box .users_details .avatar_and_username div span:nth-child(1) {
+  font-size: 22px;
+  font-family: "Work Sans";
+  font-weight: 500;
+  color: #213f7d;
+}
+.user_details_main .partail_user_box .users_details .avatar_and_username div span:nth-child(2) {
+  font-family: "Work Sans";
+  color: #545f7d;
+  font-weight: 400;
+  font-size: 14px;
+}
+.user_details_main .partail_user_box .users_details .avatar_and_username [alt=profile_avatar] {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.user_details_main .partail_user_box .users_details .tiers {
+  font-family: "Work Sans";
+  color: #545f7d;
+  font-weight: 500;
+  font-size: 14px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding-right: 30px;
+  border-right: 1px solid rgba(84, 95, 125, 0.2);
+}
+.user_details_main .partail_user_box .users_details .bank_details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.user_details_main .partail_user_box .users_details .bank_details span:nth-child(1) {
+  font-size: 22px;
+  font-family: "Work Sans";
+  font-weight: 500;
+  color: #213f7d;
+}
+.user_details_main .partail_user_box .users_details .bank_details span:nth-child(2) {
+  font-family: "Work Sans";
+  color: #545f7d;
+  font-weight: 400;
+  font-size: 14px;
+}
+.user_details_main .partail_user_box button {
+  font-family: "Work Sans";
+  font-size: 16px;
+  border-bottom: 2px solid #39cdcc;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 12px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.user_details_main .partail_user_box .navigation_panel {
+  position: absolute;
+  transform: translateY(-20%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in-out;
+  top: 110%;
+  left: 0;
+  background-color: #fff;
+  flex-direction: column;
+  padding: 30px;
+  font-family: "Work Sans";
+  font-weight: 400;
+  font-size: 16px;
+  min-height: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.user_details_main .partail_user_box .navigation_panel a {
+  color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.user_details_main .partail_user_box .navigation_panel .border_active {
+  border-bottom: 2px solid #39cdcc;
+}
+.user_details_main .other_information_details {
+  display: flex;
+  overflow-x: clip;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.user_details_main .general_details_information {
+  min-width: 100%;
+  background-color: #fff;
+  margin-top: 30px;
+  font-family: "Work Sans";
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 30px;
+}
+.user_details_main .general_details_information div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+}
+.user_details_main .general_details_information div div {
+  border-bottom: none;
+  font-family: "Work Sans";
+  min-width: 100px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.user_details_main .general_details_information div div span:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+}
+.user_details_main .general_details_information div div span:nth-child(2) {
+  text-transform: capitalize;
+}
+.user_details_main .general_details_information div .personal_information_header,
+.user_details_main .general_details_information div .education,
+.user_details_main .general_details_information div .socials,
+.user_details_main .general_details_information div .guarantor {
+  min-width: 100%;
+}
+.user_details_main .general_details_information div h1 {
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 16px;
+}
+.user_details_main .general_details_information .hide {
+  display: none;
+}
+
+.show_panel {
+  transform: translateY(0%) !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+  z-index: 40;
+}
+
+@media (min-width: 996px) {
+  .user_details_main {
+    padding: 60px;
+    height: calc(100vh - 100px);
+  }
+  .user_details_main button {
+    display: none;
+  }
+  .user_details_main .partail_user_box .navigation_panel {
+    position: relative;
+    top: 0;
+    padding-bottom: 0px;
+    background-color: transparent;
+    flex-direction: row;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+}
 aside {
   display: flex;
   flex-direction: column;
@@ -958,6 +1239,11 @@ aside .version {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+button:disabled {
+  opacity: 0.4;
 }
 
 body {
