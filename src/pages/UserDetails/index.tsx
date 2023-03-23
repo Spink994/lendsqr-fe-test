@@ -203,7 +203,7 @@ export default function UserDetails({}: Props) {
           <div
             id="general_details"
             className={`general_details_information ${
-              isActiveView !== "general_details" && "hide"
+              isActiveView !== "general_details" && "hide-current_view"
             }`}
           >
             <div className="">
@@ -346,7 +346,7 @@ export default function UserDetails({}: Props) {
           <div
             id="documents"
             className={`general_details_information ${
-              isActiveView !== "documents" && "hide"
+              isActiveView !== "documents" && "hide-current_view"
             }`}
           >
             <h1>Documents</h1>
@@ -355,7 +355,7 @@ export default function UserDetails({}: Props) {
           <div
             id="bank_details"
             className={`general_details_information ${
-              isActiveView !== "bank_details" && "hide"
+              isActiveView !== "bank_details" && "hide-current_view"
             }`}
           >
             <h1>Bank Details</h1>
@@ -364,7 +364,7 @@ export default function UserDetails({}: Props) {
           <div
             id="loans"
             className={`general_details_information ${
-              isActiveView !== "loans" && "hide"
+              isActiveView !== "loans" && "hide-current_view"
             }`}
           >
             <h1>Loans</h1>
@@ -373,7 +373,7 @@ export default function UserDetails({}: Props) {
           <div
             id="savings"
             className={`general_details_information ${
-              isActiveView !== "savings" && "hide"
+              isActiveView !== "savings" && "hide-current_view"
             }`}
           >
             <h1>Savings</h1>
@@ -382,7 +382,7 @@ export default function UserDetails({}: Props) {
           <div
             id="app_and_systems"
             className={`general_details_information ${
-              isActiveView !== "app_and_systems" && "hide"
+              isActiveView !== "app_and_systems" && "hide-current_view"
             }`}
           >
             <h1>App and System</h1>
