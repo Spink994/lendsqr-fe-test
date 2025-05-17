@@ -47,7 +47,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={`${workSans.variable}`}
-				style={{ maxHeight: '100vh', overflow: 'hidden', margin: 0, padding: 0 }}
+				style={{ height: '100vh', overflow: 'hidden', margin: 0, padding: 0 }}
 			>
 				{children}
 			</body>
