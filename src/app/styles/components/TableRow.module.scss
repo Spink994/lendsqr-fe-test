@@ -1,0 +1,18 @@
+@import '../abstracts/variables';
+
+/**
+|--------------------------------------------------
+| Table row styles
+|--------------------------------------------------
+*/
+.table-row-wrapper {
+    height: 60px;
+    border-bottom: 1px solid #213F7D1A;
+
+    td {
+        font-weight: 400;
+        font-size: $font-sm;
+        color: $color-gray-medium;
+        font-family: $font-work-sans;
+    }
+}

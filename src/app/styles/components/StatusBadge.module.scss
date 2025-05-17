@@ -1,0 +1,41 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+/**
+|--------------------------------------------------
+| Statuses
+|--------------------------------------------------
+*/
+.status-badge {
+    height: 30px;
+    width: max-content;
+    border-radius: 100px;
+    padding-inline: 13px;
+    text-transform: capitalize;
+    @include flex-center(center)
+}
+
+/**
+|--------------------------------------------------
+| Statuses
+|--------------------------------------------------
+*/
+.inactive {
+    color: #545F7D;
+    background: #545f7d10;
+}
+
+.pending {
+    color: #B7791F;
+    background: #FDF6B2;
+}
+
+.blacklisted {
+    color: #C53030;
+    background: #FED7D7;
+}
+
+.active {
+    color: #2F855A;
+    background: #C6F6D5;
+}

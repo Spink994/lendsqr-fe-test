@@ -1,0 +1,121 @@
+@import '../abstracts/variables';
+
+/**
+|--------------------------------------------------
+| Base button style
+|--------------------------------------------------
+*/
+.button {
+    border: none;
+    cursor: pointer;
+    height: $size-24;
+    font-weight: 500;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: $spacing-2;
+    transition: all 0.2s ease-in-out;
+}
+
+/**
+|--------------------------------------------------
+| Size Variants
+|--------------------------------------------------
+*/
+.small {
+    font-size: $font-sm;
+    padding: $spacing-3 $spacing-6;
+}
+
+.medium {
+    font-size: $font-base;
+    padding: $spacing-5 $spacing-8
+}
+
+.large {
+    font-size: $font-lg;
+    padding: $spacing-7 $spacing-10;
+}
+
+/**
+|--------------------------------------------------
+| Style Variants
+|--------------------------------------------------
+*/
+.filled {
+    color: $white;
+    background-color: $primary-color;
+}
+
+.filled:hover {
+    background-color: darken($primary-color, 10%);
+}
+
+.outline {
+    color: $primary-color;
+    background-color: transparent;
+    border: $spacing-1 solid $primary-color;
+}
+
+.outline:hover {
+    background-color: rgba($primary-color, 0.05);
+}
+
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/**
+|--------------------------------------------------
+| Spinner Loader
+|--------------------------------------------------
+*/
+.spinner {
+    width: $size-8;
+    height: $size-8;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top: 2px solid $primary-color;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/**
+|--------------------------------------------------
+| Icon Support
+|--------------------------------------------------
+*/
+.icon {
+    align-items: center;
+    display: inline-flex;
+    margin-right: 0.5rem;
+    justify-content: center;
+
+    /**
+    |--------------------------------------------------
+    | If an icon is trailing
+    |--------------------------------------------------
+    */
+    &:last-child {
+        margin-right: 0;
+        margin-left: 0.5rem;
+    }
+}
+
+.iconOnly {
+    width: $size-20;
+    height: $size-20;
+    padding: $spacing-4;
+    justify-content: center;
+
+    .icon {
+        margin: 0;
+    }
+}

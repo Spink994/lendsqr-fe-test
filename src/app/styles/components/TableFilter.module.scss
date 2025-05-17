@@ -1,0 +1,88 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+/**
+|--------------------------------------------------
+| Base styles
+|--------------------------------------------------
+*/
+.table-filter {
+    gap: 20px;
+    top: 60px;
+    width: 100%;
+    display: grid;
+    max-width: 270px;
+    font-weight: 500;
+    border-radius: 4px;
+    position: absolute;
+    font-size: $font-sm;
+    padding-block: 30px;
+    padding-inline: 20px;
+    background-color: $white;
+    color: $color-gray-medium;
+    border: 1px solid #545F7D24;
+
+    @include shadow(md);
+
+    .input-wrapper {
+        gap: 6px;
+        width: 100%;
+        display: grid;
+        position: relative;
+
+        .input {
+            border-radius: 8px;
+            min-height: 40px !important;
+        }
+
+        .chevron {
+            top: 55%;
+            right: 13px;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        select {
+            height: 40px;
+            color: #999fb1;
+            appearance: none;
+            border-radius: 8px;
+            padding: 0 $spacing-6;
+            text-transform: capitalize;
+            border: 1px solid #545F7D26;
+
+            /**
+            |--------------------------------------------------
+            | Border color when focused
+            |--------------------------------------------------
+            */
+            &:focus {
+                border-color: $color-gray-medium;
+            }
+        }
+    }
+
+    /**
+    |--------------------------------------------------
+    | The action buttons
+    |--------------------------------------------------
+    */
+    .action-button-wrapper {
+        gap: 14px;
+        display: flex;
+        margin-top: 20px;
+
+        button {
+            width: 50%;
+            max-height: 40px;
+            font-weight: 600;
+            border-radius: 8px;
+            font-size: $font-sm;
+        }
+
+        .reset {
+            color: $color-gray-medium;
+            border: 1px solid $color-gray-medium;
+        }
+    }
+}

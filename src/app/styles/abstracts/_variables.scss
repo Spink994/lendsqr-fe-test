@@ -1,0 +1,152 @@
+/**
+|--------------------------------------------------
+| Colors
+|--------------------------------------------------
+*/
+$white: #fff;
+$primary-color: #39CDCC;
+$secondary-color: #213F7D;
+$color-gray-light: #F5F5F5;
+$color-red-light: #FDE6EB;
+$color-red-normal: #E4033B;
+$color-lilac-light: #7A8CB1;
+$color-gray-medium: #545F7D;
+$color-green-light: #F3FCF6;
+$color-green-normal: #39CD62;
+$color-yellow-light: #FDF7E5;
+$color-yellow-normal: #E9B200;
+
+/**
+|--------------------------------------------------
+| Font family
+|--------------------------------------------------
+*/
+$font-work-sans: 'Work Sans', sans-serif;
+$font-avenir-next: 'Avenir Next', sans-serif;
+
+/**
+|--------------------------------------------------
+| Font sizes
+|--------------------------------------------------
+*/
+$font-sm: 14px;
+$font-xs: 12px;
+$font-xl: 20px;
+$font-lg: 18px;
+$font-2xl: 24px;
+$font-3xl: 40px;
+$font-base: 16px;
+$font-1_5xl: 22px;
+
+/**
+|--------------------------------------------------
+| Spacing Scale
+|--------------------------------------------------
+*/
+$spacing-1: 2px;
+$spacing-2: 4px;
+$spacing-3: 6px;
+$spacing-4: 8px;
+$spacing-5: 10px;
+$spacing-6: 12px;
+$spacing-7: 14px;
+$spacing-8: 16px;
+$spacing-9: 18px;
+$spacing-10: 20px;
+$spacing-12: 24px;
+$spacing-14: 28px;
+$spacing-16: 32px;
+$spacing-20: 40px;
+$spacing-24: 48px;
+$spacing-32: 64px;
+
+/**
+|--------------------------------------------------
+| Size Scale
+|--------------------------------------------------
+*/
+$size-0: 0px;
+$size-1: 2px;
+$size-2: 4px;
+$size-3: 6px;
+$size-4: 8px;
+$size-5: 10px;
+$size-6: 12px;
+$size-7: 14px;
+$size-8: 16px;
+$size-9: 18px;
+$size-10: 20px;
+$size-11: 22px;
+$size-12: 24px;
+$size-13: 26px;
+$size-14: 28px;
+$size-15: 30px;
+$size-16: 32px;
+$size-18: 36px;
+$size-20: 40px;
+$size-24: 48px;
+$size-25: 50px;
+$size-28: 56px;
+$size-32: 64px;
+$size-36: 72px;
+$size-40: 80px;
+$size-44: 88px;
+$size-48: 96px;
+$size-52: 104px;
+$size-56: 112px;
+$size-60: 120px;
+$size-64: 128px;
+$size-72: 144px;
+$size-80: 160px;
+$size-96: 192px;
+$size-112: 224px;
+$size-128: 256px;
+$size-144: 288px;
+$size-160: 320px;
+$size-176: 352px;
+$size-192: 384px;
+$size-208: 416px;
+$size-224: 448px;
+$size-240: 480px;
+$size-256: 512px;
+$size-288: 576px;
+$size-320: 640px;
+$size-384: 768px;
+$size-448: 896px;
+$size-512: 1024px;
+$size-576: 1152px;
+$size-640: 1280px;
+$size-720: 1440px;
+
+
+/**
+|--------------------------------------------------
+| Flex column
+|--------------------------------------------------
+*/
+$flex-column: (
+    display: flex,
+    flex-direction: column
+);
+
+/**
+|--------------------------------------------------
+| Remove button default styles
+|--------------------------------------------------
+*/
+$button-reset: (
+    border:none,
+    background-color:transparent
+);
+
+
+/**
+|--------------------------------------------------
+| Shadow Scale (like Tailwind)
+|--------------------------------------------------
+*/
+$shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);

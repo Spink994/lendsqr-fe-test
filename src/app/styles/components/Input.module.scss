@@ -1,0 +1,73 @@
+@import "../abstracts/variables";
+
+/**
+|--------------------------------------------------
+| Input field wrapper
+|--------------------------------------------------
+*/
+.inputWrapper {
+    display: flex;
+    gap: $spacing-2;
+    position: relative;
+    flex-direction: column;
+}
+
+/**
+|--------------------------------------------------
+| Main input field
+|--------------------------------------------------
+*/
+.inputField {
+    outline: none;
+    font-size: $font-sm;
+    min-height: $size-25;
+    max-height: $size-25;
+    padding: 0 $spacing-6;
+    color: $color-gray-medium;
+    border-radius: $spacing-2;
+    background-color: white;
+    border: 1px solid #545F7D26;
+    transition: border-color 0.2s ease;
+
+    /**
+    |--------------------------------------------------
+    | Border color when focused
+    |--------------------------------------------------
+    */
+    &:focus {
+        border-color: $color-gray-medium;
+    }
+
+    /**
+    |--------------------------------------------------
+    | Placeholder color
+    |--------------------------------------------------
+    */
+    &::placeholder {
+        color: #999fb1;
+        font-weight: 400;
+        font-size: $size-7;
+        font-family: $font-avenir-next;
+
+    }
+}
+
+/**
+|--------------------------------------------------
+| For the password show/hide
+|--------------------------------------------------
+*/
+.toggleButton {
+    top: 50%;
+    padding: 0;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    background: none;
+    font-weight: 600;
+    right: $spacing-6;
+    position: absolute;
+    color: $primary-color;
+    transform: translateY(-50%);
+    font-family: $font-avenir-next;
+}

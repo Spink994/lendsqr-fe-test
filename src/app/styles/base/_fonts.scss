@@ -1,0 +1,25 @@
+/**
+|--------------------------------------------------
+| Bold font weight
+|--------------------------------------------------
+*/
+@font-face {
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    font-family: 'Avenir Next';
+    src: url('/fonts/avenir-next/Avenir Next LT Pro Bold.otf') format('otf');
+}
+
+/**
+|--------------------------------------------------
+| Regular font weight
+|--------------------------------------------------
+*/
+@font-face {
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    font-family: 'Avenir Next';
+    src: url('/fonts/avenir-next/Avenir Next LT Pro Regular.otf') format('otf');
+}

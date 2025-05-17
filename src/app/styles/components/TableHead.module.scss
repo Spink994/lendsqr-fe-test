@@ -1,0 +1,32 @@
+ @import "../abstracts/mixins";
+ @import "../abstracts/variables";
+
+ /**
+|--------------------------------------------------
+| Table head
+|--------------------------------------------------
+*/
+ .table-row {
+     height: 30px;
+
+     div {
+         gap: 10px;
+         height: 30px;
+         display: flex;
+         align-items: start;
+
+         button {
+             border: none;
+             background-color: transparent;
+         }
+
+         span {
+             font-weight: 600;
+             font-size: $font-xs;
+             color: $color-gray-medium;
+             text-transform: uppercase;
+             font-family: $font-work-sans;
+         }
+     }
+
+ }

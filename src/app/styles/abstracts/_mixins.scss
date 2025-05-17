@@ -1,0 +1,118 @@
+/**
+|--------------------------------------------------
+| Responsive media query
+|--------------------------------------------------
+*/
+@mixin respond-to($breakpoint) {
+
+  /**
+  |--------------------------------------------------
+  | For small devices
+  |--------------------------------------------------
+  */
+  @if $breakpoint =='sm' {
+    @media (max-width: 640px) {
+      @content;
+    }
+  }
+
+  /**
+  |--------------------------------------------------
+  | For tablets
+  |--------------------------------------------------
+  */
+  @else if $breakpoint =='md' {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  /**
+  |--------------------------------------------------
+  | For small laptops
+  |--------------------------------------------------
+  */
+  @else if $breakpoint =='lg' {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+/**
+|--------------------------------------------------
+| Center content
+|--------------------------------------------------
+*/
+@mixin flex-center($position: center) {
+  display: flex;
+  align-items: center;
+  justify-content: $position;
+}
+
+/**
+|--------------------------------------------------
+| Text truncate
+|--------------------------------------------------
+*/
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/**
+|--------------------------------------------------
+| Text truncate
+|--------------------------------------------------
+*/
+@mixin apply-styles($flex-map) {
+  @each $property, $value in $flex-map {
+    #{$property}: #{$value};
+  }
+}
+
+/**
+|--------------------------------------------------
+| Responsive grids
+|--------------------------------------------------
+*/
+@mixin grid-autofit($min: 200px, $gap: 1rem) {
+  gap: $gap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+}
+
+/**
+|--------------------------------------------------
+| Box Shadow Mixin
+|--------------------------------------------------
+| Use like: @include shadow(xs);
+|--------------------------------------------------
+*/
+
+@mixin shadow($size) {
+  @if $size ==xs {
+    box-shadow: $shadow-xs;
+  }
+
+  @else if $size ==sm {
+    box-shadow: $shadow-sm;
+  }
+
+  @else if $size ==md {
+    box-shadow: $shadow-md;
+  }
+
+  @else if $size ==lg {
+    box-shadow: $shadow-lg;
+  }
+
+  @else if $size ==xl {
+    box-shadow: $shadow-xl;
+  }
+
+  @else {
+    @warn "Unknown shadow size `#{$size}`. Use xs, sm, md, lg, xl.";
+  }
+}

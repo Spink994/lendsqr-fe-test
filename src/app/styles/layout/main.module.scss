@@ -1,0 +1,33 @@
+/**
+|--------------------------------------------------
+| Default hidden on mobile
+|--------------------------------------------------
+*/
+.main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #F5F5F5;
+
+    main {
+        width: 100%;
+        display: flex
+    }
+
+    .children {
+        padding: 60px;
+        width: calc(100vw - 353px);
+
+        /**
+        |--------------------------------------------------
+        | Default on mobile
+        |--------------------------------------------------
+        */
+        @media (max-width: 768px) {
+            padding: 16px;
+            width: calc(100vw - 0px);
+        }
+    }
+
+
+}

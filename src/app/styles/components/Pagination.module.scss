@@ -1,0 +1,90 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+/**
+|--------------------------------------------------
+| Base pagination styles
+|--------------------------------------------------
+*/
+.pagination {
+    width: 100%;
+    height: 70px;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: $color-lilac-light;
+
+    @include flex-center(between);
+
+    /**
+    |--------------------------------------------------
+    | Base pagination styles
+    |--------------------------------------------------
+    */
+    .pagination-left {
+        flex: 1;
+        gap: 8px;
+        display: flex;
+        align-items: center;
+
+        /**
+        |--------------------------------------------------
+        | Default on mobile
+        |--------------------------------------------------
+        */
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        .currently-showing {
+            height: 30px;
+            border: none;
+            padding-inline: 18px;
+            background-color: #213F7D1A;
+
+            @include flex-center()
+        }
+    }
+
+    /**
+    |--------------------------------------------------
+    | Base pagination styles
+    |--------------------------------------------------
+    */
+    .pagination-right {
+        flex: 1;
+        @include flex-center(flex-end);
+
+        button {
+            @include apply-styles($button-reset)
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            @include flex-center(center);
+        }
+
+        /**
+        |--------------------------------------------------
+        | Page wrapper styles
+        |--------------------------------------------------
+        */
+        .pagination-page-wrapper {
+            @include flex-center();
+
+            button {
+                margin-inline: 8px;
+                font-size: $font-base;
+            }
+
+            .isActive {
+                color: $secondary-color;
+            }
+
+            .inActive {
+                color: $color-lilac-light;
+            }
+        }
+    }
+}
