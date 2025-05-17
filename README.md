@@ -2,17 +2,16 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
-
-You have to clone the repo
+First, you have to clone the repo.
+```bash
+git clone https://github.com/Spink994/lendsqr-fe-test.git
+```
 
 Secondly, install dependencies using:
 
 ```bash
 yarn install
-
 #or
-
 npm install
 ```
 
@@ -20,9 +19,7 @@ Lastly, run the development server:
 
 ```bash
 yarn dev
-
 #or
-
 npm run dev
 ```
 
