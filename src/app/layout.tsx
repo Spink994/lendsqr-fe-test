@@ -45,7 +45,10 @@ export default function RootLayout({
 	*/
 	return (
 		<html lang="en">
-			<body className={`${workSans.variable}`} style={{ margin: 0, padding: 0 }}>
+			<body
+				className={`${workSans.variable}`}
+				style={{ height: '100vh', overflow: 'hidden', margin: 0, padding: 0 }}
+			>
 				{children}
 			</body>
 		</html>
